@@ -57,32 +57,33 @@
   };
 </script>
 
-  <meta name="description" content="林家堡姑爷的博客">
+  <meta name="description" content="本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。">
 <meta name="keywords" content="shelf, shelfofclub, blog, 博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shelf的地海">
-<meta property="og:url" content="https://shelfofclub.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo在Github Pages搭建个人博客">
+<meta property="og:url" content="https://shelfofclub.github.io/2019/08/27/使用hexo在Github-Pages搭建个人博客/index.html">
 <meta property="og:site_name" content="Shelf的地海">
-<meta property="og:description" content="林家堡姑爷的博客">
+<meta property="og:description" content="本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-05T15:28:43.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shelf的地海">
-<meta name="twitter:description" content="林家堡姑爷的博客">
-  <link rel="canonical" href="https://shelfofclub.github.io/">
+<meta name="twitter:title" content="使用hexo在Github Pages搭建个人博客">
+<meta name="twitter:description" content="本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。">
+  <link rel="canonical" href="https://shelfofclub.github.io/2019/08/27/使用hexo在Github-Pages搭建个人博客/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Shelf的地海</title>
+  <title>使用hexo在Github Pages搭建个人博客 | Shelf的地海</title>
   
 
 
@@ -195,10 +196,11 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
+          <div id="content" class="content page-post-detail">
             
-  <section id="posts" class="posts-expand">
-      
+
+  <div id="posts" class="posts-expand">
+    
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -219,9 +221,8 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/27/使用hexo在Github-Pages搭建个人博客/" class="post-title-link" itemprop="url">使用hexo在Github Pages搭建个人博客</a>
+          <h1 class="post-title" itemprop="name headline">使用hexo在Github Pages搭建个人博客
+
             
           </h1>
         
@@ -264,132 +265,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/27/使用hexo在Github-Pages搭建个人博客/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+        <p>本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。</p>
+<a id="more"></a>
+<h2 id="一、搭建方法"><a href="#一、搭建方法" class="headerlink" title="一、搭建方法"></a>一、搭建方法</h2><p>Github Pages，hexo，NexT主题的文档中已经有具体的教程，参看官方文档即可。</p>
+<p><strong>文档地址：<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>   <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo</a>   <a href="https://theme-next.org/docs/" target="_blank" rel="noopener">NexT主题</a></strong></p>
+<p>对于搭建过程中的小坑，将在注意事项部分叙述。</p>
+<h2 id="二、注意事项"><a href="#二、注意事项" class="headerlink" title="二、注意事项"></a>二、注意事项</h2><ol>
+<li>图片的引用</li>
+</ol>
+<p>建议开启站点配置文件_config.yml中的<code>post_asset_folder</code>选项。然后将图片放在与文章对应的资源文件夹中，用法参看<a href="https://hexo.io/docs/asset-folders.html#Tag-Plugins-For-Relative-Path-Referencing" target="_blank" rel="noopener">文档</a>。</p>
+<ol start="2">
+<li>404页面的配置</li>
+</ol>
+<p>关于404页面，<a href="https://help.github.com/en/articles/creating-a-custom-404-page-for-your-github-pages-site" target="_blank" rel="noopener">Github Pages</a>和<a href="https://theme-next.org/docs/theme-settings/custom-pages" target="_blank" rel="noopener">NexT主题</a>的文档中均有介绍。请直接忽视NexT文档关于404的内容，它对于此配置有些误导。可简单参看一下Github Pages的介绍。<br>具体而言，就是在source文件夹下直接建一个<code>404.md</code>，写入需要的内容即可，例如腾讯的公益404,只用写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; charset=&quot;utf-8&quot; homePageUrl=&quot;http://yoursite.com/yourPage.html&quot; homePageName=&quot;回到我的主页&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+<ol start="3">
+<li>NexT主题下的字体配置</li>
+</ol>
+<p>默认的字体设置如何，我没深入研究。但可能是从谷歌加载在线的字体。这就存在访问问题。所以修改主题的配置文件，使用系统的字体。毕竟中文字体文件大，用作在线字体不现实。使用其他在线字体，恐怕不包含中文。</p>
+<p>在主题配置文件中找到Font，enable设置为true，允许自定义字体。然后所有external设置为false，禁用在线字体。至于family的设定，只允许设置一个字体，具体选择看个人喜好。其余默认的字体是什么，参看NexT的文档说明。</p>
+
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/15/记《仙剑奇侠传三》/" rel="next" title="记《仙剑奇侠传三》">
+                  <i class="fa fa-chevron-left"></i> 记《仙剑奇侠传三》
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2019/08/15/记《仙剑奇侠传三》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
-      <meta itemprop="image" content="/uploads/yueruavatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shelf的地海">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/15/记《仙剑奇侠传三》/" class="post-title-link" itemprop="url">记《仙剑奇侠传三》</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-15 22:25:08" itemprop="dateCreated datePublished" datetime="2019-08-15T22:25:08+08:00">2019-08-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-05 23:18:03" itemprop="dateModified" datetime="2019-09-05T23:18:03+08:00">2019-09-05</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>断断续续、磕磕绊绊……我终于玩完了仙剑三，历时一年多😭。作为仙剑里的最好结局，我自然要让景老板成为人生赢家，通关了完美结局（镇妖剑）。</p>
-<p>相较于仙剑一，仙剑三在规模上显得更为宏大。从仙剑一的2D到仙剑三的3D，视觉效果上让玩家感受到更加壮观的场面。世界观的补全，三皇六界的补充，神、魔、鬼、人、妖、仙的悉数登场，让玩家见识到了仙剑世界的全貌。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/15/记《仙剑奇侠传三》/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -408,8 +342,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -435,6 +378,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、搭建方法"><span class="nav-number">1.</span> <span class="nav-text">一、搭建方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、注意事项"><span class="nav-number">2.</span> <span class="nav-text">二、注意事项</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -530,5 +490,9 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
 </body>
 </html>
