@@ -4,42 +4,42 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#BA68C8">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#BA68C8">
   <link rel="manifest" href="/images/site.webmanifest">
-  <meta name="msapplication-config" content="/images/browserconfig.xml">
 
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"shelfofclub.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"shelfofclub.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-
-  <meta name="description" content="林家堡姑爷的博客">
+<meta name="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shelf的地海">
-<meta property="og:url" content="https://shelfofclub.github.io/index.html">
+<meta property="og:url" content="https://shelfofclub.github.io/">
 <meta property="og:site_name" content="Shelf的地海">
-<meta property="og:description" content="林家堡姑爷的博客">
+<meta property="og:description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Shelf">
-<meta property="article:tag" content="shelf">
-<meta property="article:tag" content=" shelfofclub">
-<meta property="article:tag" content=" blog">
-<meta property="article:tag" content=" 博客">
+<meta property="article:tag" content="shelf, shelfofclub, blog, 博客">
 <meta name="twitter:card" content="summary">
+
 
 <link rel="canonical" href="https://shelfofclub.github.io/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -48,69 +48,66 @@
     lang   : 'zh-CN'
   };
 </script>
-
-  <title>Shelf的地海</title>
+<title>Shelf的地海</title>
   
-
-
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?6cde284038aa364cedddc15ba8a57f33";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Shelf的地海</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -123,51 +120,92 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Shelf"
+      src="/uploads/yueruavatar.jpg">
+  <p class="site-author-name" itemprop="name">Shelf</p>
+  <div class="site-description" itemprop="description">林家堡姑爷Shelf（Shelfofclub）的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content index posts-expand">
-            
-      
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2020/05/02/%E5%86%99%E5%9C%A81054%EF%BC%8C%E9%9D%99%E5%BE%85%E6%9C%97%E5%A7%86%E9%85%92%E5%85%A5%E6%9D%AF/">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2021/02/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
       <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -175,28 +213,22 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/02/%E5%86%99%E5%9C%A81054%EF%BC%8C%E9%9D%99%E5%BE%85%E6%9C%97%E5%A7%86%E9%85%92%E5%85%A5%E6%9D%AF/" class="post-title-link" itemprop="url">写在1054，静待朗姆酒入杯</a>
+          <a href="/2021/02/17/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-02 22:05:05" itemprop="dateCreated datePublished" datetime="2020-05-02T22:05:05+08:00">2020-05-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-04 21:44:29" itemprop="dateModified" datetime="2020-05-04T21:44:29+08:00">2020-05-04</time>
-              </span>
+      <time title="创建时间：2021-02-17 20:16:10" itemprop="dateCreated datePublished" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -205,8 +237,163 @@
     
     
     <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2020/07/12/%E4%B8%89%E6%98%9F%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91NP500R5H-X0ACN%E4%BD%BF%E7%94%A8%E8%AF%84%E6%B5%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/yueruavatar.jpg">
+      <meta itemprop="name" content="Shelf">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shelf的地海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/12/%E4%B8%89%E6%98%9F%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91NP500R5H-X0ACN%E4%BD%BF%E7%94%A8%E8%AF%84%E6%B5%8B/" class="post-title-link" itemprop="url">三星笔记本电脑NP500R5H-X0ACN使用评测</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-12 20:36:41" itemprop="dateCreated datePublished" datetime="2020-07-12T20:36:41+08:00">2020-07-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>大学本科期间使用NP500R5H-X0ACN的感受与评价。<br>挖坑待填。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/12/%E4%B8%89%E6%98%9F%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91NP500R5H-X0ACN%E4%BD%BF%E7%94%A8%E8%AF%84%E6%B5%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2020/05/02/%E5%86%99%E5%9C%A81054%EF%BC%8C%E9%9D%99%E5%BE%85%E6%9C%97%E5%A7%86%E9%85%92%E5%85%A5%E6%9D%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/yueruavatar.jpg">
+      <meta itemprop="name" content="Shelf">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shelf的地海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/02/%E5%86%99%E5%9C%A81054%EF%BC%8C%E9%9D%99%E5%BE%85%E6%9C%97%E5%A7%86%E9%85%92%E5%85%A5%E6%9D%AF/" class="post-title-link" itemprop="url">写在1054，静待朗姆酒入杯</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-02 22:05:05" itemprop="dateCreated datePublished" datetime="2020-05-02T22:05:05+08:00">2020-05-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
           <p>朗姆的猜测，相关事件的分析和一些吐槽</p>
           <!--noindex-->
             <div class="post-button">
@@ -222,24 +409,31 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2020/04/16/%E5%B0%8F%E7%B1%B34c%E7%9A%84%E9%87%8D%E7%94%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
       <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -247,28 +441,29 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/16/%E5%B0%8F%E7%B1%B34c%E7%9A%84%E9%87%8D%E7%94%9F/" class="post-title-link" itemprop="url">小米4c的重生</a>
+          <a href="/2020/04/16/%E5%B0%8F%E7%B1%B34c%E7%9A%84%E9%87%8D%E7%94%9F/" class="post-title-link" itemprop="url">小米4c的重生</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-16 22:25:29" itemprop="dateCreated datePublished" datetime="2020-04-16T22:25:29+08:00">2020-04-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-02 22:23:09" itemprop="dateModified" datetime="2020-05-02T22:23:09+08:00">2020-05-02</time>
-              </span>
+      <time title="创建时间：2020-04-16 22:25:29" itemprop="dateCreated datePublished" datetime="2020-04-16T22:25:29+08:00">2020-04-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -277,8 +472,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>本文记录尝试再次使用旧机小米4c的过程。</p>
           <!--noindex-->
             <div class="post-button">
@@ -294,24 +487,31 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2019/10/25/%E4%B8%83%E5%B9%B4%E5%90%8E%E7%9A%84%E6%88%91%EF%BC%8C%E4%B8%80%E5%AE%9A%EF%BC%8C%E6%8B%AF%E6%95%91%E4%B8%83%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BD%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
       <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -319,22 +519,29 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/25/%E4%B8%83%E5%B9%B4%E5%90%8E%E7%9A%84%E6%88%91%EF%BC%8C%E4%B8%80%E5%AE%9A%EF%BC%8C%E6%8B%AF%E6%95%91%E4%B8%83%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BD%A0/" class="post-title-link" itemprop="url">七年后的我，一定，拯救七年前的你</a>
+          <a href="/2019/10/25/%E4%B8%83%E5%B9%B4%E5%90%8E%E7%9A%84%E6%88%91%EF%BC%8C%E4%B8%80%E5%AE%9A%EF%BC%8C%E6%8B%AF%E6%95%91%E4%B8%83%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BD%A0/" class="post-title-link" itemprop="url">七年后的我，一定，拯救七年前的你</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-25 23:14:58 / 修改时间：23:20:38" itemprop="dateCreated datePublished" datetime="2019-10-25T23:14:58+08:00">2019-10-25</time>
-            </span>
+      <time title="创建时间：2019-10-25 23:14:58" itemprop="dateCreated datePublished" datetime="2019-10-25T23:14:58+08:00">2019-10-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -343,8 +550,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>关于春人和葵，还有那些卷进时间漩涡的人们。</p>
 <p>严重剧透预警！！！</p>
           <!--noindex-->
@@ -361,24 +566,31 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
       <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -386,28 +598,29 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">使用hexo在Github Pages搭建个人博客</a>
+          <a href="/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">使用hexo在Github Pages搭建个人博客</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-27 22:18:26" itemprop="dateCreated datePublished" datetime="2019-08-27T22:18:26+08:00">2019-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-04 22:00:49" itemprop="dateModified" datetime="2020-05-04T22:00:49+08:00">2020-05-04</time>
-              </span>
+      <time title="创建时间：2019-08-27 22:18:26" itemprop="dateCreated datePublished" datetime="2019-08-27T22:18:26+08:00">2019-08-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -416,8 +629,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。</p>
           <!--noindex-->
             <div class="post-button">
@@ -433,24 +644,31 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2019/08/15/%E8%AE%B0%E3%80%8A%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89%E3%80%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
       <meta itemprop="name" content="Shelf">
-      <meta itemprop="description" content="林家堡姑爷的博客">
+      <meta itemprop="description" content="林家堡姑爷Shelf（Shelfofclub）的博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -458,28 +676,29 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/15/%E8%AE%B0%E3%80%8A%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89%E3%80%8B/" class="post-title-link" itemprop="url">记《仙剑奇侠传三》</a>
+          <a href="/2019/08/15/%E8%AE%B0%E3%80%8A%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89%E3%80%8B/" class="post-title-link" itemprop="url">记《仙剑奇侠传三》</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-15 22:25:08" itemprop="dateCreated datePublished" datetime="2019-08-15T22:25:08+08:00">2019-08-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-05 23:18:03" itemprop="dateModified" datetime="2019-09-05T23:18:03+08:00">2019-09-05</time>
-              </span>
+      <time title="创建时间：2019-08-15 22:25:08" itemprop="dateCreated datePublished" datetime="2019-08-15T22:25:08+08:00">2019-08-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 20:16:10" itemprop="dateModified" datetime="2021-02-17T20:16:10+08:00">2021-02-17</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -488,8 +707,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>断断续续、磕磕绊绊……我终于玩完了仙剑三，历时一年多😭。作为仙剑里的最好结局，我自然要让景老板成为人生赢家，通关了完美结局（镇妖剑）。</p>
 <p>相较于仙剑一，仙剑三在规模上显得更为宏大。从仙剑一的2D到仙剑三的3D，视觉效果上让玩家感受到更加壮观的场面。世界观的补全，三皇六界的补充，神、魔、鬼、人、妖、仙的悉数登场，让玩家见识到了仙剑世界的全貌。</p>
           <!--noindex-->
@@ -506,21 +723,18 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
-  
-  
-
-
-  
+</div>
 
 
 
-          </div>
-          
+
+
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -529,7 +743,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -538,114 +752,39 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Shelf"
-      src="/uploads/yueruavatar.jpg">
-  <p class="site-author-name" itemprop="name">Shelf</p>
-  <div class="site-description" itemprop="description">林家堡姑爷的博客</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Shelf</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
+  
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
 
 
 
@@ -655,20 +794,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
 
 </body>
 </html>
