@@ -24,21 +24,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"shelfofclub.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。">
+<meta name="description" content="使用默认配置下的jieba分词时，不能识别出自定义字典里包含标点符号的中文词语，例如“访问控制（列）表”。jieba会在标点处将词语切开，即使在自定义词典中提高词频也没有用。 参考jieba的issue中关于默认汉字的一些信息，可修改jieba的全局变量re_han_default &#x3D; re.compile(&quot;([\u4E00-\u9FD5a-zA-Z0-9+#&amp;\._%\-]+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用hexo在Github Pages搭建个人博客">
-<meta property="og:url" content="https://shelfofclub.github.io/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+<meta property="og:title" content="jieba处理含标点词语">
+<meta property="og:url" content="https://shelfofclub.github.io/2021/03/31/jieba%E5%A4%84%E7%90%86%E5%90%AB%E6%A0%87%E7%82%B9%E8%AF%8D%E8%AF%AD/">
 <meta property="og:site_name" content="Shelf的地海">
-<meta property="og:description" content="本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。">
+<meta property="og:description" content="使用默认配置下的jieba分词时，不能识别出自定义字典里包含标点符号的中文词语，例如“访问控制（列）表”。jieba会在标点处将词语切开，即使在自定义词典中提高词频也没有用。 参考jieba的issue中关于默认汉字的一些信息，可修改jieba的全局变量re_han_default &#x3D; re.compile(&quot;([\u4E00-\u9FD5a-zA-Z0-9+#&amp;\._%\-]+">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-08-27T14:18:26.000Z">
+<meta property="article:published_time" content="2021-03-31T04:49:49.000Z">
 <meta property="article:modified_time" content="2021-03-31T06:18:45.540Z">
 <meta property="article:author" content="Shelf">
 <meta property="article:tag" content="shelf, shelfofclub, blog, 博客">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://shelfofclub.github.io/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+<link rel="canonical" href="https://shelfofclub.github.io/2021/03/31/jieba%E5%A4%84%E7%90%86%E5%90%AB%E6%A0%87%E7%82%B9%E8%AF%8D%E8%AF%AD/">
 
 
 <script class="page-configurations">
@@ -50,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>使用hexo在Github Pages搭建个人博客 | Shelf的地海</title>
+<title>jieba处理含标点词语 | Shelf的地海</title>
   
 
   <script>
@@ -145,7 +145,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -158,7 +158,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、搭建方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.</span> <span class="nav-text">二、注意事项</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -213,7 +212,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2019/08/27/%E4%BD%BF%E7%94%A8hexo%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2021/03/31/jieba%E5%A4%84%E7%90%86%E5%90%AB%E6%A0%87%E7%82%B9%E8%AF%8D%E8%AF%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
@@ -226,7 +225,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          使用hexo在Github Pages搭建个人博客
+          jieba处理含标点词语
         </h1>
 
         <div class="post-meta-container">
@@ -236,16 +235,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2019-08-27 22:18:26" itemprop="dateCreated datePublished" datetime="2019-08-27T22:18:26+08:00">2019-08-27</time>
+      <time title="创建时间：2021-03-31 12:49:49 / 修改时间：14:18:45" itemprop="dateCreated datePublished" datetime="2021-03-31T12:49:49+08:00">2021-03-31</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-31 14:18:45" itemprop="dateModified" datetime="2021-03-31T14:18:45+08:00">2021-03-31</time>
-      </span>
 
   
 </div>
@@ -257,34 +250,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文介绍使用hexo和NexT主题在Github Pages搭建博客的方法与注意事项。</p>
-<a id="more"></a>
-<h2 id="一、搭建方法"><a href="#一、搭建方法" class="headerlink" title="一、搭建方法"></a>一、搭建方法</h2><p>Github Pages，hexo，NexT主题的文档中已经有具体的教程，参看官方文档即可。</p>
-<p><strong>文档地址：<a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a>   <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo</a>   <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/">NexT主题</a></strong></p>
-<p>对于搭建过程中的小坑，将在注意事项部分叙述。</p>
-<h2 id="二、注意事项"><a href="#二、注意事项" class="headerlink" title="二、注意事项"></a>二、注意事项</h2><ol>
-<li>图片的引用</li>
-</ol>
-<p>建议开启站点配置文件_config.yml中的<code>post_asset_folder</code>选项。然后将图片放在与文章对应的资源文件夹中，用法参看<a target="_blank" rel="noopener" href="https://hexo.io/docs/asset-folders.html#Tag-Plugins-For-Relative-Path-Referencing">文档</a>。</p>
-<ol start="2">
-<li>404页面的配置</li>
-</ol>
-<p>关于404页面，<a target="_blank" rel="noopener" href="https://help.github.com/en/articles/creating-a-custom-404-page-for-your-github-pages-site">Github Pages</a>和<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/custom-pages">NexT主题</a>的文档中均有介绍。请直接忽视NexT文档关于404的内容，它对于此配置有些误导。可简单参看一下Github Pages的介绍。<br>具体而言，就是在source文件夹下直接建一个<code>404.md</code>，写入需要的内容即可，例如腾讯的公益404,只用写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;&#x2F;qzonestyle.gtimg.cn&#x2F;qzone&#x2F;hybrid&#x2F;app&#x2F;404&#x2F;search_children.js&quot; charset&#x3D;&quot;utf-8&quot; homePageUrl&#x3D;&quot;http:&#x2F;&#x2F;yoursite.com&#x2F;yourPage.html&quot; homePageName&#x3D;&quot;回到我的主页&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>即可。另可使用<code>skip_render</code>跳过404.md的渲染，免去不必要的主题样式。</p>
-<ol start="3">
-<li>NexT主题下的字体配置</li>
-</ol>
-<p>默认的字体设置如何，我没深入研究。但可能是从谷歌加载在线的字体。这就存在访问问题。所以修改主题的配置文件，使用系统的字体。毕竟中文字体文件大，用作在线字体不现实。使用其他在线字体，恐怕不包含中文。</p>
-<p>在主题配置文件中找到Font，enable设置为true，允许自定义字体。然后所有external设置为false，禁用在线字体。至于family的设定，只允许设置一个字体，具体选择看个人喜好。其余默认的字体是什么，参看NexT的文档说明。</p>
-<ol start="4">
-<li>NexT主题配置方法</li>
-</ol>
-<p>建议在站点的配置文件中设置<code>theme_config</code>。这样避免改动<code>themes/next</code>文件夹内容，便于后面使用git更新NexT。</p>
-<ol start="5">
-<li>自定义页面</li>
-</ol>
-<p>有时需要自己修改页面的样式、内容等等。同样不建议直接修改NexT的文件。阅读<a href="https://theme-next.js.org/docs/theme-settings/custom-files" title="" target="">Next文档的自定义文件部分</a>，NexT里面有些使用了变量，更改变量的值更优雅。</p>
+        <p>使用默认配置下的jieba分词时，不能识别出自定义字典里包含标点符号的中文词语，例如“访问控制（列）表”。jieba会在标点处将词语切开，即使在自定义词典中提高词频也没有用。</p>
+<p>参考jieba的<a target="_blank" rel="noopener" href="https://github.com/fxsjy/jieba/issues/14#issuecomment-549686048">issue</a>中关于默认汉字的一些信息，可修改jieba的全局变量<code>re_han_default = re.compile(&quot;([\u4E00-\u9FD5a-zA-Z0-9+#&amp;\._%\-]+)&quot;, re.U)</code>，在<code>-</code>后加入相关的符号，例如<code>re_han_default = re.compile(&quot;([\u4E00-\u9FD5a-zA-Z0-9+#&amp;\._%\-（）]+)&quot;, re.U)</code>，即可解决问题。其内在原因可能是jieba没将中文括号识别为中文的一部分。</p>
 
     </div>
 
@@ -298,14 +265,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/08/15/%E8%AE%B0%E3%80%8A%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89%E3%80%8B/" rel="prev" title="记《仙剑奇侠传三》">
-                  <i class="fa fa-chevron-left"></i> 记《仙剑奇侠传三》
+                <a href="/2020/07/12/%E4%B8%89%E6%98%9F%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91NP500R5H-X0ACN%E4%BD%BF%E7%94%A8%E8%AF%84%E6%B5%8B/" rel="prev" title="三星笔记本电脑NP500R5H-X0ACN使用评测">
+                  <i class="fa fa-chevron-left"></i> 三星笔记本电脑NP500R5H-X0ACN使用评测
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/10/25/%E4%B8%83%E5%B9%B4%E5%90%8E%E7%9A%84%E6%88%91%EF%BC%8C%E4%B8%80%E5%AE%9A%EF%BC%8C%E6%8B%AF%E6%95%91%E4%B8%83%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BD%A0/" rel="next" title="七年后的我，一定，拯救七年前的你">
-                  七年后的我，一定，拯救七年前的你 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
