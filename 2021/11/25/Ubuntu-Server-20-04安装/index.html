@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://shelfofclub.github.io/2021/11/25/Ubuntu-Server-20-04%E5%AE%89%E8%A3%85/ubuntu-server-installer-log.png">
 <meta property="og:image" content="https://shelfofclub.github.io/2021/11/25/Ubuntu-Server-20-04%E5%AE%89%E8%A3%85/ubuntu-server-static-ip.jpg">
 <meta property="article:published_time" content="2021-11-25T15:54:16.000Z">
-<meta property="article:modified_time" content="2021-11-25T16:11:19.349Z">
+<meta property="article:modified_time" content="2021-11-27T11:25:27.295Z">
 <meta property="article:author" content="Shelf">
 <meta property="article:tag" content="shelf, shelfofclub, blog, 博客">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-26 00:11:19" itemprop="dateModified" datetime="2021-11-26T00:11:19+08:00">2021-11-26</time>
+        <time title="修改时间：2021-11-27 19:25:27" itemprop="dateModified" datetime="2021-11-27T19:25:27+08:00">2021-11-27</time>
       </span>
 
   
@@ -279,7 +279,7 @@
 <p>使用<code>sudo dpkg-reconfigure tzdata</code>更改时区。</p>
 <p>详见<a target="_blank" rel="noopener" href="https://ubuntu.com/server/docs/network-ntp">时间</a>，<a target="_blank" rel="noopener" href="https://help.ubuntu.com/community/UbuntuTime">时区</a>。</p>
 <h3 id="本地化"><a href="#本地化" class="headerlink" title="本地化"></a>本地化</h3><p>首先确认是否有zh_CN.UTF-8与相关语言包，若没有则先安装语言包，生成zh_CN.UTF-8。</p>
-<p>然后修改<code>LANG</code>和<code>LC_MESSAGES</code>环境变量。</p>
+<p>然后设置<code>LANG</code>环境变量。建议不设置<code>LC_MESSAGES</code>。若设置<code>LC_MESSAGES</code>，系统消息可保持英文，可能在一些情况下有利于理解。但是将<code>LC_MESSAGES</code>设置为<code>POSIX</code>会使得许多命令的<code>--help</code>以及vim、nano的菜单为英文。</p>
 <p>详见<a target="_blank" rel="noopener" href="https://help.ubuntu.com/community/Locale">Locale</a>。</p>
 <h3 id="htop配置文件"><a href="#htop配置文件" class="headerlink" title="htop配置文件"></a>htop配置文件</h3><p>当cpu核数过多时，小窗口显示htop极不友好。可参照其他设备的htop，“摸黑”移除cpu所有单个核的状态，只显示cpu整体平均。再将个人的htop配置文件复制到系统配置文件。配置文件位置参考htop的man，查看CONFIG FILE。</p>
 <h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>参考<a target="_blank" rel="noopener" href="https://ubuntu.com/server/docs/security-users">用户管理文档</a>增删用户。加入<code>sudo</code>组即可获得root权限，建议除管理员外，其他用户只赋予特定有需求的命令的sudo权限。sudo配置文件的语法可以参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Sudo">Arch Linux Wiki</a>。</p>
