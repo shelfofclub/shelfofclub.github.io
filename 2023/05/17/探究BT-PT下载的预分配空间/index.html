@@ -21,28 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"shelfofclub.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="记录使用Manjaro KDE过程中遇到的一些配置和问题。可能适用于其他发行版和桌面环境。">
+    <meta name="description" content="是否预分配空间主要源于填零导致硬盘负荷太重和磁盘碎片问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manjaro KDE备忘录">
-<meta property="og:url" content="https://shelfofclub.github.io/2021/05/24/Manjaro-KDE%E5%A4%87%E5%BF%98%E5%BD%95/">
+<meta property="og:title" content="探究BT&#x2F;PT下载的预分配空间">
+<meta property="og:url" content="https://shelfofclub.github.io/2023/05/17/%E6%8E%A2%E7%A9%B6BT-PT%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%A2%84%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4/">
 <meta property="og:site_name" content="Shelf的地海">
-<meta property="og:description" content="记录使用Manjaro KDE过程中遇到的一些配置和问题。可能适用于其他发行版和桌面环境。">
+<meta property="og:description" content="是否预分配空间主要源于填零导致硬盘负荷太重和磁盘碎片问题。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-24T07:29:26.000Z">
+<meta property="article:published_time" content="2023-05-17T04:43:39.000Z">
 <meta property="article:modified_time" content="2023-05-17T04:54:30.497Z">
 <meta property="article:author" content="Shelf">
 <meta property="article:tag" content="shelf, shelfofclub, blog, 博客">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://shelfofclub.github.io/2021/05/24/Manjaro-KDE%E5%A4%87%E5%BF%98%E5%BD%95/">
+<link rel="canonical" href="https://shelfofclub.github.io/2023/05/17/%E6%8E%A2%E7%A9%B6BT-PT%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%A2%84%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://shelfofclub.github.io/2021/05/24/Manjaro-KDE%E5%A4%87%E5%BF%98%E5%BD%95/","path":"2021/05/24/Manjaro-KDE备忘录/","title":"Manjaro KDE备忘录"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://shelfofclub.github.io/2023/05/17/%E6%8E%A2%E7%A9%B6BT-PT%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%A2%84%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4/","path":"2023/05/17/探究BT-PT下载的预分配空间/","title":"探究BT/PT下载的预分配空间"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Manjaro KDE备忘录 | Shelf的地海</title>
+<title>探究BT/PT下载的预分配空间 | Shelf的地海</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -112,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Konsole%E7%95%8C%E9%9D%A2%E5%B7%A6%E4%BE%A7%E5%87%BA%E7%8E%B0%E8%93%9D%E8%89%B2%E7%AB%96%E6%9D%A1"><span class="nav-number">1.</span> <span class="nav-text">Konsole界面左侧出现蓝色竖条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Konsole%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="nav-number">2.</span> <span class="nav-text">Konsole的工具栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Num-Lock"><span class="nav-number">3.</span> <span class="nav-text">Num Lock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">中文输入法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">拼音输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIME-x2F-%E4%B8%AD%E5%B7%9E%E9%9F%BB"><span class="nav-number">4.2.</span> <span class="nav-text">RIME&#x2F;中州韻</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8Eut"><span class="nav-number">1.</span> <span class="nav-text">对于ut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8Eqb"><span class="nav-number">2.</span> <span class="nav-text">对于qb</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2021/05/24/Manjaro-KDE%E5%A4%87%E5%BF%98%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="https://shelfofclub.github.io/2023/05/17/%E6%8E%A2%E7%A9%B6BT-PT%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%A2%84%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/yueruavatar.jpg">
@@ -180,12 +180,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Manjaro KDE备忘录 | Shelf的地海">
+      <meta itemprop="name" content="探究BT/PT下载的预分配空间 | Shelf的地海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Manjaro KDE备忘录
+          探究BT/PT下载的预分配空间
         </h1>
 
         <div class="post-meta-container">
@@ -196,7 +196,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-05-24 15:29:26" itemprop="dateCreated datePublished" datetime="2021-05-24T15:29:26+08:00">2021-05-24</time>
+      <time title="创建时间：2023-05-17 12:43:39" itemprop="dateCreated datePublished" datetime="2023-05-17T12:43:39+08:00">2023-05-17</time>
     </span>
 
   
@@ -209,15 +209,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>记录使用Manjaro KDE过程中遇到的一些配置和问题。可能适用于其他发行版和桌面环境。<span id="more"></span></p>
-<h2 id="Konsole界面左侧出现蓝色竖条"><a href="#Konsole界面左侧出现蓝色竖条" class="headerlink" title="Konsole界面左侧出现蓝色竖条"></a>Konsole界面左侧出现蓝色竖条</h2><p>在设置中编辑配置方案，一般编辑当前的配置方案，“滚动”中关闭“高亮显示即将进入视图的行”。</p>
-<p>原因未知，可以查看自带的帮助文档，暂时没太明白这个选项的含义。</p>
-<h2 id="Konsole的工具栏"><a href="#Konsole的工具栏" class="headerlink" title="Konsole的工具栏"></a>Konsole的工具栏</h2><p>在菜单栏下面出现了“新建标签页”，“左右拆分视图”，“上下拆分视图”，“复制”，“粘贴”和“查找”。“设置”→“显示工具栏”→“主工具栏”和“会话工具栏”可以显示或关闭这两项。</p>
-<h2 id="Num-Lock"><a href="#Num-Lock" class="headerlink" title="Num Lock"></a>Num Lock</h2><p>KDE系统设置中“输入设备”→“键盘”中可以设置Num Lock的状态，“保持不变”可能存在bug，没有效果。</p>
-<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><p>根据ArchWiki中<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Fcitx5的文档</a>安装相应的包，并配置环境变量（为单个用户配置或系统层面配置视个人需求而定）。然后为避免问题，进行重启。</p>
-<h3 id="拼音输入法"><a href="#拼音输入法" class="headerlink" title="拼音输入法"></a>拼音输入法</h3><p>安装<code>fcitx5-im</code>和<code>fcitx5-chinese-addons</code>。添加拼音输入法后即可使用。</p>
-<p>可以根据ArchWiki中<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Fcitx5的文档</a>配置导入搜狗词库、云拼音和emoji。云拼音后端有<code>Google</code>，<code>GoogleCN</code>，<code>Baidu</code>。暂不确定谷歌离开大陆后输入法的水平，个人选用百度。</p>
-<h3 id="RIME-x2F-中州韻"><a href="#RIME-x2F-中州韻" class="headerlink" title="RIME&#x2F;中州韻"></a>RIME&#x2F;中州韻</h3><p>安装<code>fcitx5-im</code>和<code>fcitx5-rime</code>。暂时未使用中州韻，关于词典和emoji参考<a target="_blank" rel="noopener" href="https://rime.im/">RIME官网</a>和ArchWiki中<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">RIME</a>与<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Fcitx5的文档</a>。</p>
+        <p>是否预分配空间主要源于填零导致硬盘负荷太重和磁盘碎片问题。</p>
+<span id="more"></span>
+
+<p>预分配空间的时候，系统会向申请的空间填零，因而刚开始下载的时候，不管网速如何，硬盘写入会跑满，如果此时因网速和内存里的缓存大小，缓存满了，又没有速度供有用的数据写入硬盘，就会下载速度骤降，等待缓存排空。</p>
+<p>填零要说挺损固态寿命的。这个行为在机械硬盘是确确实实发生了，没在固态下载过，不知道有没有优化，避免真的填零。</p>
+<h2 id="对于ut"><a href="#对于ut" class="headerlink" title="对于ut"></a>对于ut</h2><ol>
+<li>似乎不用预分配空间。在ut自己的帮助（绿色版里CHM文件）里，Appendix A→Preferences→General末尾对这个选项有说明，不影响碎片。一般而言，我也确保硬盘空间充足，不会下载着时候空间不足。所以就觉得没啥用处。<blockquote>
+<p>Pre-allocate all files tells µTorrent to create and fully allocate every file you select to download immediately after starting the torrent job. Note that this option does 2. not have an impact on hard drive fragmentation (advantageous or otherwise), as µTorrent already allocates each file upon writing to disk even without this option.</p>
+</blockquote>
+</li>
+<li>不预分配的话，是否还填零，这就不知道了，但一开始填零的量就少很多，能缓解磁盘负荷问题。</li>
+<li>no_zero这个选项，ut帮助也有解释，可以自己看看，需要管理员权限或者改组策略，并且自行考虑相应的安全风险。对于我个人，觉得没啥风险，自己没啥敏感数据。</li>
+</ol>
+<h2 id="对于qb"><a href="#对于qb" class="headerlink" title="对于qb"></a>对于qb</h2><blockquote>
+<p>由于ut的红种问题，我改用qb</p>
+</blockquote>
+<p>qb没见类似no_zero的选项。</p>
+<p>预分配空间也是会填0。我关闭了这个功能。预分配与否决定了libtorrent的storage mode，libtorrent文档明确写了，预分配会填零，不预分配的话会使用稀疏文件（NTFS是支持稀疏文件的），文档没说是否会填零，不过承认可能导致碎片。我认为，我个人平时下载也不多，没那么多新电影、电视剧或者番整天更新，一个月也就下载几次，就算有碎片，每周或者每月win自动整理，如果是固态的话，直接就不用考虑碎片问题。根据我的观察结果，稀疏文件似乎不填零。</p>
+<p>内存上的缓存，建议设置为-1，即自动。首先自动的时候，根据内存大小自动设定了几百兆的缓存大小，是满足绝大多数情况的（记不清是qb&#x2F;libtorrent的文档&#x2F;issue具体哪里看到的了，qb或者libtorrent作者是这么说的）。原来我设定好几G的缓存（16G内存，设定的好像是4G缓存，8G内存好像是1G缓存），就发现无论qb或者其他程序使用内存，容易导致虚拟内存的换入换出，因而一直读写固态系统盘，损寿命。设置自动就没事了。至于ut，我已经不用了，不好断言如何设置缓存大小，ut好像不是用libtorrent，是自己写的。</p>
 
     </div>
 
@@ -231,14 +241,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/03/31/jieba%E5%A4%84%E7%90%86%E5%90%AB%E6%A0%87%E7%82%B9%E8%AF%8D%E8%AF%AD/" rel="prev" title="jieba处理含标点词语">
-                  <i class="fa fa-chevron-left"></i> jieba处理含标点词语
+                <a href="/2023/05/17/CentOS-7-9%E5%AE%89%E8%A3%85/" rel="prev" title="CentOS 7.9安装">
+                  <i class="fa fa-chevron-left"></i> CentOS 7.9安装
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/16/%E6%92%AD%E6%94%BE%E5%99%A8%E9%85%8D%E7%BD%AE%E4%B9%8B%E8%B7%AF/" rel="next" title="播放器配置之路">
-                  播放器配置之路 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
