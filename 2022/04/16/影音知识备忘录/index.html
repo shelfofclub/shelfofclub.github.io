@@ -29,7 +29,7 @@
 <meta property="og:description" content="长期挖坑更新。非专业人士，不保证科学严谨性">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-16T09:22:47.000Z">
-<meta property="article:modified_time" content="2025-03-14T01:56:42.444Z">
+<meta property="article:modified_time" content="2025-03-26T07:55:05.789Z">
 <meta property="article:author" content="Shelf">
 <meta property="article:tag" content="shelf, shelfofclub, blog, 博客">
 <meta name="twitter:card" content="summary">
@@ -243,7 +243,7 @@
 <li>强制让电视（有限范围）工作在全范围，会黑的太黑。原因未知。</li>
 </ul>
 <p>不用太在意这些搭配组合，关键是了解硬件是全范围还是有限范围，然后对应设置好软件。</p>
-<p>但是，2024年的智能电视，是否还遵循这些标准呢？是全范围还是有限范围呢？有没有标准图片可以检测呢？</p>
+<p>但是，2024年的智能电视，是否还遵循这些标准呢？是全范围还是有限范围呢？有没有标准图片可以检测呢？可以使用256灰阶图片（8 bits情况）来测试。具体会发生什么暂不具体分析，但只要最后整条链路中存在有限范围的瓶颈，那么就无法完美显示所有灰阶。因为，16~235范围的整数无法无损表示256个整数的信息。至于损失了哪些信息，就先不管了，反正有损就说明是有限范围。</p>
 <h3 id="gamma"><a href="#gamma" class="headerlink" title="gamma"></a>gamma</h3><p>伽玛矫正处理的是亮度，通过非线性的运算，从而让数据尽量用于表示人眼可很好感知的差异，而不是浪费在人眼感知不到的差异上。相机记录自然界的光线时，会使用一个gamma，从而存储为相应数值。显示图像内容的时候，也会使用gamma，从文件中的数值恢复为发出的光线亮度。为了正确显示，这两处的gamma应当匹配。如果记录时的gamma和显示时的gamma（可能由操作系统和显示器，软硬件共同决定）不一样，我认为应该可以进行转换从而保证正确的显示效果。在知道自然界的亮度是经何种gamma记录下来后，可以计算出正确的亮度，然后在按照显示的gamma进行编码，发给显示器进行显示。</p>
 <h3 id="动态范围"><a href="#动态范围" class="headerlink" title="动态范围"></a>动态范围</h3><p>直接复制过来维基百科的定义：</p>
 <blockquote>
